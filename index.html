@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TrendWave Fashion</title>
+<style>
+
+  :root {
+    --bg-color: #1c1c2e;
+    --accent-purple: #6a4b9a;
+    --accent-teal: #4aa3a3;
+    --accent-gold: #c5a880;
+    --text-light: #f5f5f5;
+    --shadow-color: rgba(0,0,0,0.3);
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-light);
+    overflow-x: hidden;
+  }
+
+ 
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+    color: var(--accent-gold);
+    letter-spacing: 2px;
+  }
+
+  nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    color: var(--accent-teal);
+  }
+
+ 
+  .hero {
+    text-align: center;
+    padding: 100px 20px;
+    perspective: 1000px;
+  }
+
+  .hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--accent-purple);
+    animation: floatText 3s ease-in-out infinite;
+  }
+
+  .hero p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    color: var(--accent-gold);
+  }
+
+  .hero button {
+    padding: 15px 50px;
+    font-size: 1.2em;
+    background: var(--accent-teal);
+    color: var(--text-light);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    transition: 0.5s;
+    transform-style: preserve-3d;
+  }
+
+  .hero button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 20px 35px var(--shadow-color);
+  }
+
+  @keyframes floatText {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+ 
+  .gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 50px 20px;
+    perspective: 1200px;
+  }
+
+  .gallery .card {
+    width: 250px;
+    height: 350px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px var(--shadow-color);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+    transform-style: preserve-3d;
+    background: #2c2c3e;
+    display: inline-block;
+  }
+
+  .gallery .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 25px;
+    transition: transform 0.5s ease;
+  }
+
+  .gallery .card:hover {
+    transform: scale(1.05) rotateY(3deg) rotateX(3deg);
+    box-shadow: 0 25px 40px var(--shadow-color);
+    filter: brightness(1.05);
+  }
+
+
+  .info {
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .info h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--accent-purple);
+  }
+
+  .info p {
+    font-size: 1.2em;
+    color: var(--accent-gold);
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+  }
+
+  
+  .sign-in-split {
+    display: flex;
+    min-height: 80vh;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 50px auto;
+    max-width: 900px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  }
+
+  .sign-in-left, .sign-in-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+    color: var(--text-light);
+  }
+
+  .sign-in-left {
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-teal) 100%);
+  }
+
+  .sign-in-left h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  .sign-in-left p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+
+  .sign-in-right {
+    background: var(--bg-color);
+  }
+
+  .sign-in-right form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sign-in-right h3 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: var(--accent-gold);
+    text-align: center;
+  }
+
+  .sign-in-right input {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: var(--text-light);
+    font-size: 1em;
+  }
+
+  .sign-in-right input::placeholder {
+    color: rgba(245,245,245,0.6);
+  }
+
+  .sign-in-right button {
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    background: var(--accent-purple);
+    color: var(--text-light);
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .sign-in-right button:hover {
+    background: var(--accent-teal);
+  }
+
+  .sign-in-right p {
+    text-align: center;
+    margin-top: 15px;
+    color: var(--accent-gold);
+  }
+
+  .sign-in-right p a {
+    color: var(--accent-purple);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .sign-in-right p a:hover {
+    color: var(--accent-teal);
+  }
+
+  @media(max-width: 768px) {
+    .sign-in-split {
+      flex-direction: column;
+      border-radius: 0;
+      max-width: 100%;
+    }
+    .sign-in-left, .sign-in-right {
+      padding: 40px 30px;
+    }
+  }
+
+ 
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+  }
+
+  footer p {
+    margin: 10px 0;
+    color: var(--text-light);
+  }
+
+  footer a {
+    color: var(--accent-gold);
+    margin: 0 10px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  footer a:hover {
+    color: var(--accent-teal);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>TrendWave</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Collection</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Glow with Style!</h2>
+  <p>Fashion for the bold, stylish, and young.</p>
+  <button>Explore Now</button>
+</section>
+
+<section class="gallery">
+  <div class="card"><img src="https://www.apetogentleman.com/wp-content/uploads/2018/10/best-british-fashion-brands-1.jpg" alt="Fashion 1"></div>
+  <div class="card"><img src="https://static.standard.co.uk/2025/03/26/10/10/25450_WMH_Brand_1.jpeg?trim=68,0,119,0&quality=75&auto=webp&width=960" alt="Fashion 2"></div>
+  <div class="card"><img src="https://image.hm.com/content/dam/global_campaigns/season_02/men/start-page-assets/w33/MS32LH112-4x5-Teaser-1-v2-w33.jpg?imwidth=4800" alt="Fashion 3"></div>
+  <div class="card"><img src="https://www.kaufbei.tv/magazin/wp-content/uploads/zimnie-trendy-v-muzhskoj-mozhe.jpg" alt="Fashion 4"></div>
+</section>
+
+<section class="info">
+  <h3>Be Bold, Be You!</h3>
+  <p>Our clothing line is designed for those who love to stand out. Mix deep navy, royal purple, muted teal, and soft gold to create a look that's uniquely yours. TrendWave isn't just fashion—it's a lifestyle for energetic, young, trendsetting individuals!</p>
+</section>
+
+
+<section class="sign-in-split">
+  <div class="sign-in-left">
+    <h2>TrendWave</h2>
+    <p>Join the movement. Style that speaks for itself.</p>
+  </div>
+  <div class="sign-in-right">
+    <form>
+      <h3>Sign In</h3>
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Sign In</button>
+      <p>Don't have an account? <a href="#">Sign Up</a></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 TrendWave. All rights reserved.</p>
+  <p>
+    <a href="#">Instagram</a> | 
+    <a href="#">Facebook</a> | 
+    <a href="#">TikTok</a>
+  </p>
+</footer>
+
+</body>
+</html>
